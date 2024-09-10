@@ -405,7 +405,7 @@ export const webQuizQuestions: QuizQuestion[] = [
   },
 
   {
-    id: 1,
+    id: 38,
     text: 'Sie sehen in einer ts-Datei den folgenden Code:\nimport "./style.css";\nWas bewirkt dieser Code?',
     options: [
       "Die Datei wird nicht wirklich importiert, sondern nur von Webpack verarbeitet.",
@@ -415,7 +415,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [0],
   },
   {
-    id: 2,
+    id: 39,
     text: "Wie heißt die Architektur (bzw. das Architekturmuster) des Backends?",
     options: [
       "Schichtenarchitektur",
@@ -426,7 +426,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [0],
   },
   {
-    id: 5,
+    id: 40,
     text: "Was bedeutet der HTTP-Response Status-Code 404?",
     options: [
       "Der Client ist nicht berechtigt, die Aktion auszuführen (Unauthorized).",
@@ -441,7 +441,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 12,
+    id: 41,
     text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
     options: [
       "Sie darf nicht viel Speicher verbrauchen.",
@@ -452,7 +452,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [3],
   },
   {
-    id: 20,
+    id: 42,
     text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
     options: [
       "Sie darf nicht viel Speicher verbrauchen.",
@@ -463,7 +463,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [1],
   },
   {
-    id: 25,
+    id: 43,
     text: "In einer relationalen Datenbank spricht man von Spalten (Columns). Was ist das Pendant (die Entsprechung) in MongoDB?",
     options: [
       "Sammlungen (Collections)",
@@ -479,7 +479,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 28,
+    id: 44,
     text: "Welche Aspekte können Sie sinnvollerweise in einer Security-Pipeline mit Middlewares im Express-Backend adressieren?",
     options: [
       "Cookie-Verwaltung",
@@ -496,7 +496,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [1, 2, 4, 7],
   },
   {
-    id: 31,
+    id: 45,
     text: "Ist ein JWT genauso sicherheitskritisch wie ein Passwort und warum?",
     options: [
       "Nein, da es ja nur ein JSON-Objekt ist und verschlüsselt ist.",
@@ -507,7 +507,7 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [3],
   },
   {
-    id: 36,
+    id: 46,
     text: "Ordnen Sie die folgenden Verfahren zum Speichern des JWT beim Client nach ihrer Sicherheit.",
     options: [
       "In einem HTTP-only Cookie",
@@ -515,5 +515,136 @@ export const webQuizQuestions: QuizQuestion[] = [
       "In einer lokalen Variable",
     ],
     correctAnswers: [0, 1, 2],
+  },
+
+  {
+    id: 47,
+    text: "Welchen HTTP-Statuscode würden Sie beim Aufruf eines Backends erwarten, wenn ein interner Serverfehler auftritt?",
+    options: ["500", "400", "200", "404"],
+    correctAnswers: [0],
+  },
+  {
+    id: 48,
+    text: "Welchen Hook verwenden Sie in React, wenn Sie innerhalb einer Komponente veränderliche Daten speichern wollen?",
+    options: ["useContext", "useParam", "useEffect", "useState"],
+    correctAnswers: [3],
+  },
+  {
+    id: 49,
+    text: "Wofür steht das 'A' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
+    options: ["Authentication", "Access", "Availability", "Authorization"],
+    correctAnswers: [2],
+  },
+  {
+    id: 50,
+    text: 'Gegeben sei folgender Code:\nfunction Bar() {\n  return React.createElement("p", { id: "par1" }, "Hello")\n}\nÜbersetzen Sie diesen Code nach JSX.',
+    options: [
+      'function Bar() {\n  return (\n    <p id="par1"> Hello </p>\n  )\n}',
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 51,
+    text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
+    options: [
+      "Sie muss kollisionsresistent sein.",
+      "Sie muss besonders schnell sein.",
+      "Sie darf nicht viel Speicher verbrauchen.",
+      "Sie muss kollisionsfrei sein.",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 52,
+    text: "Wie können Sie am einfachsten Informationen von einer Funktionskomponente zu ihren Kindern (die ebenfalls Funktionskomponente sind) übermitteln?",
+    options: [
+      "Über den useContext-Hook",
+      "Über den useEffect-Hook",
+      "Über Props der Kinder-Funktionskomponente.",
+      "Über States der Kinder-Funktionskomponente.",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 53,
+    text: "Welches Framework in JavaScript kann man zur Umsetzung des Entitätslayers der Backend-komponente einsetzen?",
+    options: ["React", "Mongoose", "Spring", "Express"],
+    correctAnswers: [1],
+  },
+  {
+    id: 54,
+    text: "Mit welcher Prop registrieren Sie eine Validierungsfunktion einer Controlled-Component, wenn Sie bei jedem Tastendruck eine Validierung durchführen wollen?",
+    options: ["onInput", "onSubmit", "onChange", "onBlur"],
+    correctAnswers: [2],
+  },
+  {
+    id: 55,
+    text: "Geben Sie an, wie die Lebensdauer von Daten ist, wenn man sie in dem angegebenen Ort im Browser speichert.",
+    options: [
+      "Session Storage: Flüchtig, überlebt Reload nicht",
+      "Speicher (als Variable): überlebt Reload",
+      "Local Storage: überlebt Restart",
+      "Cookie: überlebt Restart",
+    ],
+    correctAnswers: [0, 2, 3],
+  },
+  {
+    id: 56,
+    text: "Was macht die Methode verify der JavaScript-Bibliothek jsonwebtoken?",
+    options: [
+      "Sie entschlüsselt und verifiziert ein JSON-Objekt.",
+      "Sie wandelt einen String in ein JSON-Objekt und erzeugt einen Hashcode, der mit Teilen des Eingabestrings (Signatur) übereinstimmen muss.",
+      "Sie entschlüsselt ein Base64-codierte Binärdatei und erzeugt daraus ein JSON-Objekt.",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 57,
+    text: "In der HTTP-Response können Informationen an unterschiedlicher Stelle enthalten sein. Wo können Sie diese in der Response finden?",
+    options: [
+      "Im Status-Code",
+      "Im Header",
+      "In den Argumenten",
+      "In der URI",
+      "Im Body",
+    ],
+    correctAnswers: [0, 1, 4],
+  },
+  {
+    id: 58,
+    text: 'Gegeben sei folgender Code:\nconst router = express.Router();\nrouter.get("/a", myFunc)\napp.use("/b", router);\nWelche URL (mit Host "host", Protokoll "http" und ohne weitere Portangabe) ruft myFunc auf?',
+    options: [
+      "http://host/a/b",
+      "http://host/b",
+      "http://host/b/a",
+      "http://host/a",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 59,
+    text: "Was bedeutet der HTTP-Response Status-Code 401?",
+    options: [
+      "Anfrage wird nicht unterstützt (Not Implemented).",
+      "Die Anfrage ist fehlerhaft (Bad Request).",
+      "OK, Anfrage wurde erfolgreich bearbeitet.",
+      "Interner Serverfehler (Internal Server Error).",
+      "Die angefragte Resource gibt es nicht.",
+      "Der Client ist nicht berechtigt, die Aktion auszuführen (Unauthorized).",
+      "Die Resource wurde erfolgreich angelegt.",
+      "Die Anfrage wurde erfolgreich bearbeitet, die Antwort enthält aber keinen Inhalt (Content).",
+    ],
+    correctAnswers: [5],
+  },
+  {
+    id: 60,
+    text: "Was ist eine Ressource im Kontext von REST?",
+    options: [
+      "Eine Ressource ist eine Entität aus dem Entitäts- bzw. Domänenklassenmodell.",
+      "Eine Ressource ist ein JSON-Objekt, das von einer URI identifiziert werden kann.",
+      "Eine Ressource ist eine abstrakte Entität, die von einer URI identifiziert werden kann.",
+      "Eine Ressource ist ein HTML-Objekt, das von einer URI identifiziert werden kann.",
+    ],
+    correctAnswers: [2],
   },
 ];
