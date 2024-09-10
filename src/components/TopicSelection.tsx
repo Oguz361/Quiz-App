@@ -15,15 +15,12 @@ const TopicSelection: React.FC = () => {
       <Link to="/" className="back-button">
         Zurück
       </Link>
-      <h1 className="topic-title">Wähle ein Thema</h1>
       <div className="card-container">
         {topics.map((topic) => (
           <div key={topic.id} className={`card ${topic.gradient}`}>
             <div className="card-details">
               <p className="text-title">{topic.name}</p>
-              <p className="text-body">Klicke für mehr Informationen</p>
             </div>
-            <Link to={topic.path} className="card-button">Mehr Info</Link>
           </div>
         ))}
       </div>
