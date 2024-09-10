@@ -10,40 +10,54 @@ const QuizScreen: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState<number[]>([]);
+  const [selectedOptions, setSelectedOptions] = useState<number[][]>(questions.map(() => []));
 
   const handleOptionToggle = (optionIndex: number) => {
     setSelectedOptions((prev) => {
-      if (prev.includes(optionIndex)) {
-        return prev.filter((index) => index !== optionIndex);
+      const newSelectedOptions = [...prev];
+      const currentSelected = newSelectedOptions[currentQuestionIndex];
+      if (currentSelected.includes(optionIndex)) {
+        newSelectedOptions[currentQuestionIndex] = currentSelected.filter((index) => index !== optionIndex);
       } else {
-        return [...prev, optionIndex];
+        newSelectedOptions[currentQuestionIndex] = [...currentSelected, optionIndex];
       }
+      return newSelectedOptions;
     });
   };
 
-  const handleSubmit = () => {
-    const currentQuestion = questions[currentQuestionIndex];
-    const isCorrect = selectedOptions.length === currentQuestion.correctAnswers.length &&
-      selectedOptions.every((option) => currentQuestion.correctAnswers.includes(option));
-    
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-
+  const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOptions([]);
     } else {
+      calculateFinalScore();
       setShowResult(true);
     }
+  };
+
+  const handleBack = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const calculateFinalScore = () => {
+    let finalScore = 0;
+    questions.forEach((question, index) => {
+      const selectedAnswers = selectedOptions[index];
+      const correctAnswers = question.correctAnswers;
+      if (selectedAnswers.length === correctAnswers.length &&
+          selectedAnswers.every((answer) => correctAnswers.includes(answer))) {
+        finalScore += 1;
+      }
+    });
+    setScore(finalScore);
   };
 
   const restartQuiz = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
     setShowResult(false);
-    setSelectedOptions([]);
+    setSelectedOptions(questions.map(() => []));
   };
 
   if (questions.length === 0) {
@@ -64,12 +78,11 @@ const QuizScreen: React.FC = () => {
   }
 
   const currentQuestion = questions[currentQuestionIndex];
-  const gradientClass = `gradient-${(currentQuestionIndex % 4) + 1}`;
 
   return (
     <div className="quiz-screen">
       <h2>Quiz: {topicId}</h2>
-      <div className={`question-container ${gradientClass}`}>
+      <div className="question-container">
         <h3>Frage {currentQuestionIndex + 1} von {questions.length}</h3>
         <p>{currentQuestion.text}</p>
         <div className="options-container">
@@ -77,16 +90,21 @@ const QuizScreen: React.FC = () => {
             <label key={index} className="option-label">
               <input
                 type="checkbox"
-                checked={selectedOptions.includes(index)}
+                checked={selectedOptions[currentQuestionIndex].includes(index)}
                 onChange={() => handleOptionToggle(index)}
               />
               {option}
             </label>
           ))}
         </div>
-        <button onClick={handleSubmit} className="quiz-button">
-          {currentQuestionIndex === questions.length - 1 ? 'Quiz beenden' : 'Nächste Frage'}
-        </button>
+        <div className="navigation-buttons">
+          <button onClick={handleBack} className="quiz-button" disabled={currentQuestionIndex === 0}>
+            Zurück
+          </button>
+          <button onClick={handleNext} className="quiz-button">
+            {currentQuestionIndex === questions.length - 1 ? 'Quiz beenden' : 'Nächste Frage'}
+          </button>
+        </div>
       </div>
     </div>
   );
