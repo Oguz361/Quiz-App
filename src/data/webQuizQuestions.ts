@@ -1,64 +1,396 @@
 export interface QuizQuestion {
-    id: number;
-    text: string;
-    options: string[];
-    correctAnswers: number[];
-  }
-  
-  export const webQuizQuestions: QuizQuestion[] = [
-    {
-      id: 1,
-      text: "Welche der folgenden Aussagen über HTML5 sind korrekt?",
-      options: [
-        "Es unterstützt native Audio- und Videowidgets",
-        "Es ist abwärtskompatibel mit älteren Browsern",
-        "Es erfordert ein Plugin für die Ausführung",
-        "Es bietet verbesserte Unterstützung für Offline-Anwendungen"
-      ],
-      correctAnswers: [0, 1, 3]
-    },
-    {
-      id: 2,
-      text: "Welche CSS-Eigenschaft wird verwendet, um den Abstand zwischen Elementen zu definieren?",
-      options: [
-        "margin",
-        "padding",
-        "border-spacing",
-        "gap"
-      ],
-      correctAnswers: [0, 3]
-    },
-    {
-      id: 3,
-      text: "Was ist der Zweck des 'use strict' Statements in JavaScript?",
-      options: [
-        "Es aktiviert strikte Typisierung",
-        "Es verhindert die Verwendung von undeklarierten Variablen",
-        "Es macht den Code schneller",
-        "Es ermöglicht die Verwendung moderner JavaScript-Funktionen"
-      ],
-      correctAnswers: [1]
-    },
-    {
-      id: 4,
-      text: "Welche der folgenden sind gültige Werte für die CSS display-Eigenschaft?",
-      options: [
-        "block",
-        "inline",
-        "hidden",
-        "flex"
-      ],
-      correctAnswers: [0, 1, 3]
-    },
-    {
-      id: 5,
-      text: "Welche HTTP-Methode sollte für das Abrufen von Daten vom Server verwendet werden?",
-      options: [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-      ],
-      correctAnswers: [0]
-    }
-  ];
+  id: number;
+  text: string;
+  options: string[];
+  correctAnswers: number[];
+}
+
+export const webQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    text: "Wie können Sie am einfachsten Informationen von einer Funktionskomponente zu ihren Kindern (die ebenfalls Funktionskomponente sind) übermitteln?",
+    options: [
+      "Über Props der Kinder-Funktionskomponente",
+      "Über den useEffect-Hook",
+      "Über den useContext-Hook",
+      "Über States der Kinder-Funktionskomponente",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 2,
+    text: "Wie würden Sie ein Test-Setup am besten umsetzen, das von mehreren Jest-Tests benötigt wird?",
+    options: [
+      "Das Setup wird in eine Funktion mit Annotation '@BeforeEach' ausgelagert. Diese wird automatisch aufgerufen.",
+      "Die Tests werden zu einem Test zusammengefasst, der das Setup enthält.",
+      "Das Setup wird in eine Funktion ausgelagert, die von allen Tests zu Beginn aufgerufen wird.",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 3,
+    text: "Wie heißt das Modell, in dem wir modellieren, welche Daten in unserem System aus fachlicher Sicht vorkommen?",
+    options: [
+      "Anwendungsfall-Modell",
+      "Komponenten-Modell",
+      "Domänenklassen-Modell",
+      "Aktivitäts-Modell",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 4,
+    text: "SOP ist ein Sicherheitsfeature welcher Komponente?",
+    options: [
+      "Server (Express)",
+      "Browser",
+      "Frontend (React)",
+      "Server (Node.js)",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 5,
+    text: "Wo können Informationen im HTTP-Request enthalten sein?",
+    options: [
+      "Im Status-Code",
+      "In der URI",
+      "Im Header",
+      "Im Body",
+      "In den Argumenten",
+    ],
+    correctAnswers: [1, 2, 3],
+  },
+  {
+    id: 6,
+    text: "Welche Arten von React-Komponenten gibt es aus technischer Sicht?",
+    options: [
+      "Stateful Components",
+      "Class Components",
+      "Container Components",
+      "Higher Order Components",
+      "Functional Components",
+      "Smart Components",
+      "Presentational Components",
+    ],
+    correctAnswers: [1, 4],
+  },
+  {
+    id: 7,
+    text: "Welche URL ruft 'myFunc' im folgenden Code auf?",
+    options: [
+      "http://host/b",
+      "http://host/a",
+      "http://host/a/b",
+      "http://host",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 8,
+    text: "Wozu dient die Entitäts-Komponente des Backends?",
+    options: [
+      "Sie ist im Grunde die Umsetzung der Domänenklassen und ist u.a. für die Persistierung zuständig.",
+      "In ihr wird das Verhalten des Systems modelliert.",
+      "Sie ist für die Kommunikation zwischen einem System und der Außenwelt zuständig.",
+      "Sie modelliert die Akteure (Entitäten) der Anwendung.",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 9,
+    text: "Mit welcher API kann im Browser mit JavaScript asynchron mit einem Server kommuniziert werden?",
+    options: ["Fetch", "React", "Bootstrap", "Express", "Router"],
+    correctAnswers: [0],
+  },
+  {
+    id: 10,
+    text: "Welche Alternativen gibt es zu REST APIs?",
+    options: [
+      "Query-Based APIs (z.B. mit GraphQL)",
+      "Service-Orientierte APIs (SOAP)",
+      "Event-Orientierte APIs (z.B. mit Kafka)",
+      "Remote-Procedure-Calls basierte APIs",
+    ],
+    correctAnswers: [0, 3],
+  },
+  {
+    id: 11,
+    text: "Sie sollen Formulardaten mittels HTML und CSS validieren. Was müssen Sie in React beachten?",
+    options: [
+      "Sie müssen eine Controlled-Component und den useRef-Hook verwenden.",
+      "Sie müssen eine Uncontrolled-Component und den useControl-Hook verwenden.",
+      "Sie müssen eine Controlled-Component und den useControl-Hook verwenden.",
+      "Sie müssen eine Uncontrolled-Component und den useRef-Hook verwenden.",
+    ],
+    correctAnswers: [3],
+  },
+  {
+    id: 12,
+    text: "Was ist daran problematisch in der folgenden React-Funktionskomponente?",
+    options: [
+      "Es ist alles in Ordnung.",
+      "Event-Handler müssen mit addEventListener registriert werden.",
+      "useState ist hier falsch, stattdessen müsste useContext verwendet werden.",
+      "In der Funktion wird asynchroner Code verwendet, hier müsste man useEffect verwenden.",
+      "Es werden keine Props definiert, insbesondere main wird nicht als Prop definiert.",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 13,
+    text: "Was ist problematisch bei Datenbankabfragen mittels String-Konkatenation?",
+    options: [
+      "Es ist anfällig für Denial-of-Service-Attacken.",
+      "Es ist anfällig für Cross-Origin-Resource-Sharing.",
+      "Es ist anfällig für Cross-Site-Scripting (XSS).",
+      "Es ist anfällig für Cross-Site-Request-Forgery.",
+      "Es ist anfällig für (NO)SQL-Injection.",
+    ],
+    correctAnswers: [4],
+  },
+  {
+    id: 14,
+    text: "Welches Framework in JavaScript kann zur Umsetzung der Entitäts-Komponente (im Backend) eingesetzt werden?",
+    options: ["Spring", "React", "Express", "Mongoose"],
+    correctAnswers: [3],
+  },
+  {
+    id: 15,
+    text: "In einer relationalen Datenbank spricht man von Tabellen (Tables). Was ist das Pendant in MongoDB?",
+    options: [
+      "Objekte (Objects)",
+      "Sammlungen (Collections)",
+      "Dokumente (Documents)",
+      "Felder (Fields)",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 16,
+    text: "Wofür steht das 'C' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
+    options: ["Confidentiality", "Control", "Configuration", "Compliance"],
+    correctAnswers: [0],
+  },
+  {
+    id: 17,
+    text: "Welche der folgenden Verfahren bilden eine Zwei-Faktor-Authentifizierung?",
+    options: [
+      "Passwort und PIN",
+      "Passwort und Mobile TAN (die ans Handy geschickt wird)",
+      "Karte (mit Chip) und Mobile TAN",
+      "Passwort und Fingerabdruck",
+      "Passwort und Sicherheitsabfrage",
+    ],
+    correctAnswers: [1, 3],
+  },
+  {
+    id: 18,
+    text: "Was bedeutet der HTTP-Statuscode 200?",
+    options: [
+      "Die Anfrage wurde erfolgreich bearbeitet, die Antwort enthält aber keinen Inhalt.",
+      "Interner Serverfehler (Internal Server Error).",
+      "Die angefragte Ressource gibt es nicht.",
+      "Die Ressource wurde erfolgreich angelegt.",
+      "OK, Anfrage wurde erfolgreich bearbeitet.",
+    ],
+    correctAnswers: [4],
+  },
+  {
+    id: 19,
+    text: "Was ist Mongoose?",
+    options: [
+      "Eine SQL-Datenbank",
+      "Eine Objekt-Datenbank",
+      "Eine Dokument-Datenbank",
+      "Ein Object-Document-Mapper",
+      "Ein Object-Relational-Mapper",
+    ],
+    correctAnswers: [3],
+  },
+  {
+    id: 20,
+    text: "Was bedeutet der HTTP-Statuscode 404?",
+    options: [
+      "Anfrage wird nicht unterstützt (Not Implemented).",
+      "Der Client ist nicht berechtigt, die Aktion auszuführen (Unauthorized).",
+      "Interner Serverfehler (Internal Server Error).",
+      "Die angefragte Ressource gibt es nicht.",
+      "Die Anfrage ist fehlerhaft (Bad Request).",
+    ],
+    correctAnswers: [3],
+  },
+
+  {
+    id: 21,
+    text: "Was für eine Art von Datenbank ist MongoDB?",
+    options: [
+      "MongoDB ist eine Objekt-Datenbank.",
+      "MongoDB ist eine Graph-Datenbank.",
+      "MongoDB ist eine relationale Datenbank.",
+      "MongoDB ist eine dokumenten-orientierte Datenbank.",
+    ],
+    correctAnswers: [3],
+  },
+  {
+    id: 22,
+    text: "Ordnen Sie die Erklärungen richtig zu: Authorization und Authentication.",
+    options: [
+      "Authorization – Einräumung von Rechten, inklusive der Gewährung von Zugriff.",
+      "Authentication – Verifizierung der behaupteten Identität einer Entität.",
+    ],
+    correctAnswers: [0, 1],
+  },
+  {
+    id: 23,
+    text: "Welche Angriffsarten adressiert die Sanitisierung von Daten?",
+    options: [
+      "SQL-Injection",
+      "Cross-Site-Scripting",
+      "Denial-of-Service",
+      "Distributed Denial-of-Service",
+    ],
+    correctAnswers: [0, 1],
+  },
+  {
+    id: 24,
+    text: "Wofür steht das 'A' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
+    options: ["Availability", "Authentication", "Authorization", "Access"],
+    correctAnswers: [0],
+  },
+  {
+    id: 25,
+    text: "Was bedeutet das Schutzziel Availability?",
+    options: [
+      "Nur Personen, die berechtigt sind, dürfen Daten lesen.",
+      "Personen, die berechtigt sind, können Daten lesen oder schreiben.",
+      "Nur Personen, die berechtigt sind, dürfen Daten schreiben.",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 26,
+    text: "Welche Aussagen sind korrekt für das Anlegen eines neuen Teams mit Mongoose?",
+    options: [
+      "Man kann ein neues Team mit Team({ name: 'Hallo' }) anlegen.",
+      "Man kann ein neues Team mit Team.create({ name: 'Hallo' }) anlegen.",
+      "Beim Anlegen eines neuen Teams muss ein Wert für captain angegeben werden.",
+      "Mongoose prüft automatisch, ob ein Eintrag in der Collection existiert.",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 27,
+    text: "Was ist die wichtigste Ergänzung von Mongoose bezüglich MongoDB?",
+    options: [
+      "Bei Mongoose können wir Daten hierarchisch definieren.",
+      "Bei Mongoose können wir Indizes definieren.",
+      "Bei Mongoose können wir Fremdschlüssel definieren.",
+      "Bei Mongoose können wir ein Schema definieren.",
+    ],
+    correctAnswers: [3],
+  },
+  {
+    id: 28,
+    text: "Woran könnte es liegen, dass Sie nicht auf request.body im Express-Backend zugreifen können?",
+    options: [
+      "Sie haben die Middleware express.json() nicht eingebunden.",
+      "Sie haben die Middleware express.text() nicht eingebunden.",
+      "Sie haben die Middleware express.urlencoded() nicht eingebunden.",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 29,
+    text: "Welche Aussagen sind korrekt zu einem Formular in React?",
+    options: [
+      "Die Daten befinden sich im Request-Body.",
+      "Die Daten befinden sich in der Request-Query.",
+      "Damit man darauf zugreifen kann, muss die Middleware urlencoded installiert sein.",
+      "Die Daten befinden sich im Request-Parameter.",
+    ],
+    correctAnswers: [0, 2],
+  },
+  {
+    id: 30,
+    text: "Welche Aspekte können Sie sinnvollerweise in einer Security-Pipeline mit Middlewares im Express-Backend adressieren?",
+    options: [
+      "Hashing",
+      "Authentifizierung",
+      "Datenbankabfragen",
+      "Autorisierung",
+      "Rate-Limiting",
+      "Cookie-Verwaltung",
+      "Logging",
+      "Penetrationstests",
+      "Verschlüsselung",
+    ],
+    correctAnswers: [1, 3, 4, 6],
+  },
+  {
+    id: 31,
+    text: "Wozu dient die Kontroll-Komponente des Backends?",
+    options: [
+      "Sie ist für die Kommunikation zwischen einem System und der Außenwelt zuständig.",
+      "Sie validiert die Daten, die eingegeben werden.",
+      "In ihr wird das Verhalten des Systems modelliert.",
+      "Sie modelliert die Akteure (Kontrolleure) der Anwendung.",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 32,
+    text: "Was bedeutet der HTTP-Response-Statuscode 204?",
+    options: [
+      "Die Anfrage wurde erfolgreich bearbeitet, die Antwort enthält aber keinen Inhalt.",
+      "Die Ressource wurde erfolgreich angelegt.",
+      "Interner Serverfehler (Internal Server Error).",
+      "Die Anfrage ist fehlerhaft (Bad Request).",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 33,
+    text: "Welche Middleware benötigen Sie, um auf die Formulardaten im Express-Backend zuzugreifen?",
+    options: [
+      "express.json()",
+      "cookie-parser",
+      "express.urlencoded()",
+      "express.text()",
+    ],
+    correctAnswers: [2],
+  },
+  {
+    id: 34,
+    text: "Was bedeutet der HTTP-Statuscode 201?",
+    options: [
+      "Die Anfrage wurde erfolgreich bearbeitet, aber es gibt keinen Inhalt.",
+      "Die Ressource wurde erfolgreich angelegt.",
+      "Die Anfrage ist fehlerhaft.",
+      "Die angefragte Ressource existiert nicht.",
+    ],
+    correctAnswers: [1],
+  },
+  {
+    id: 35,
+    text: "Was beschreibt der Begriff 'CORS'?",
+    options: [
+      "Cross-Origin Resource Sharing",
+      "Content-Origin Resource Sharing",
+      "Cross-Origin Request Scripting",
+      "Content-Request Object Service",
+    ],
+    correctAnswers: [0],
+  },
+  {
+    id: 36,
+    text: "Wie können Sie sicherstellen, dass Ihre API nur von bestimmten Domains verwendet werden darf?",
+    options: [
+      "Durch die Konfiguration von CORS in Ihrem Backend.",
+      "Durch die Verwendung eines API-Gateways.",
+      "Durch die Implementierung von OAuth 2.0.",
+      "Durch das Hinzufügen eines Authentifizierungs-Tokens.",
+    ],
+    correctAnswers: [0],
+  },
+];
