@@ -8,10 +8,10 @@ const HomeScreen: React.FC = () => {
       <h1>Quiz App</h1>
       <div className="button-container">
         <Link to="/topics" className="button">
-          Single Player
+          Einzelspieler
         </Link>
         <Link to="/coming-soon" className="button multiplayer">
-          Multiplayer
+          Mehrspieler
         </Link>
       </div>
     </div>
