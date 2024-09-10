@@ -13,18 +13,18 @@ const TopicSelection: React.FC = () => {
   return (
     <div className="topic-selection">
       <Link to="/" className="back-button">
-        <span className="back-arrow">&#8592;</span> Zurück
+        Zurück
       </Link>
       <h1 className="topic-title">Wähle ein Thema</h1>
       <div className="card-container">
         {topics.map((topic) => (
-          <Link key={topic.id} to={topic.path} className="card-link">
-            <div className={`card ${topic.gradient}`}>
-              <div className="card-info">
-                <p className="title">{topic.name}</p>
-              </div>
+          <div key={topic.id} className={`card ${topic.gradient}`}>
+            <div className="card-details">
+              <p className="text-title">{topic.name}</p>
+              <p className="text-body">Klicke für mehr Informationen</p>
             </div>
-          </Link>
+            <Link to={topic.path} className="card-button">Mehr Info</Link>
+          </div>
         ))}
       </div>
     </div>

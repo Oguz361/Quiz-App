@@ -5,8 +5,7 @@ import HomeScreen from './components/HomeScreen'
 import TopicSelection from './components/TopicSelection'
 import QuizScreen from './components/QuizScreen'
 import ResultScreen from './components/ResultScreen'
-import ComingSoon from './components/ComingSoon'
-
+import NotFound from './components/NotFound'
 
 function App() {
 
@@ -17,7 +16,7 @@ function App() {
         <Route path="/topics" element={<TopicSelection />} />
         <Route path="/quiz/:topicId" element={<QuizScreen />} />
         <Route path="/result" element={<ResultScreen />} />
-        <Route path="/coming-soon" element={<ComingSoon />} />
+        <Route path="/coming-soon" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
