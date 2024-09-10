@@ -1,0 +1,92 @@
+/* src/styles/QuizScreen.css */
+
+:root {
+    --gradient-1: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    --gradient-2: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    --gradient-3: linear-gradient(45deg, #d4fc79, #96e6a1);
+    --gradient-4: linear-gradient(45deg, #84fab0, #8fd3f4);
+    --background-color: #f0f0f0;
+    --text-color: #333333;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --button-color: #4CAF50;
+    --button-hover-color: #45a049;
+  }
+  
+  .quiz-screen {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .question-container {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .option-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--card-background);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option-label:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .option-label input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .quiz-button {
+    background: var(--gradient-4);
+    border: none;
+    color: var(--text-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .quiz-button:hover {
+    opacity: 0.9;
+  }
+  
+  .quiz-result {
+    text-align: center;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  .quiz-result h2 {
+    background: var(--gradient-4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
