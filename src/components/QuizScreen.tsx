@@ -11,25 +11,47 @@ const QuizScreen: React.FC = () => {
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<number[][]>(questions.map(() => []));
+  const [isAnswerConfirmed, setIsAnswerConfirmed] = useState(false);
+  const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(new Array(questions.length).fill(false));
 
   const handleOptionToggle = (optionIndex: number) => {
-    setSelectedOptions((prev) => {
-      const newSelectedOptions = [...prev];
-      const currentSelected = newSelectedOptions[currentQuestionIndex];
-      if (currentSelected.includes(optionIndex)) {
-        newSelectedOptions[currentQuestionIndex] = currentSelected.filter((index) => index !== optionIndex);
-      } else {
-        newSelectedOptions[currentQuestionIndex] = [...currentSelected, optionIndex];
-      }
-      return newSelectedOptions;
+    if (!isAnswerConfirmed) {
+      setSelectedOptions((prev) => {
+        const newSelectedOptions = [...prev];
+        const currentSelected = newSelectedOptions[currentQuestionIndex];
+        if (currentSelected.includes(optionIndex)) {
+          newSelectedOptions[currentQuestionIndex] = currentSelected.filter((index) => index !== optionIndex);
+        } else {
+          newSelectedOptions[currentQuestionIndex] = [...currentSelected, optionIndex];
+        }
+        return newSelectedOptions;
+      });
+    }
+  };
+
+  const handleConfirmAnswer = () => {
+    const currentQuestion = questions[currentQuestionIndex];
+    const selectedAnswers = selectedOptions[currentQuestionIndex];
+    const isCorrect = selectedAnswers.length === currentQuestion.correctAnswers.length &&
+      selectedAnswers.every((answer) => currentQuestion.correctAnswers.includes(answer));
+    
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    setIsAnswerConfirmed(true);
+    setAnsweredQuestions((prev) => {
+      const newAnsweredQuestions = [...prev];
+      newAnsweredQuestions[currentQuestionIndex] = true;
+      return newAnsweredQuestions;
     });
   };
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setIsAnswerConfirmed(false);
     } else {
-      calculateFinalScore();
       setShowResult(true);
     }
   };
@@ -37,20 +59,8 @@ const QuizScreen: React.FC = () => {
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setIsAnswerConfirmed(answeredQuestions[currentQuestionIndex - 1]);
     }
-  };
-
-  const calculateFinalScore = () => {
-    let finalScore = 0;
-    questions.forEach((question, index) => {
-      const selectedAnswers = selectedOptions[index];
-      const correctAnswers = question.correctAnswers;
-      if (selectedAnswers.length === correctAnswers.length &&
-          selectedAnswers.every((answer) => correctAnswers.includes(answer))) {
-        finalScore += 1;
-      }
-    });
-    setScore(finalScore);
   };
 
   const restartQuiz = () => {
@@ -58,6 +68,12 @@ const QuizScreen: React.FC = () => {
     setScore(0);
     setShowResult(false);
     setSelectedOptions(questions.map(() => []));
+    setIsAnswerConfirmed(false);
+    setAnsweredQuestions(new Array(questions.length).fill(false));
+  };
+
+  const abortQuiz = () => {
+    navigate('/topic-selection');
   };
 
   if (questions.length === 0) {
@@ -70,6 +86,16 @@ const QuizScreen: React.FC = () => {
         <div className="quiz-result">
           <h2>Quiz beendet!</h2>
           <p>Dein Ergebnis: {score} von {questions.length}</p>
+          <div className="question-summary">
+            {questions.map((_, index) => (
+              <div
+                key={index}
+                className={`question-box ${answeredQuestions[index] ? (index < score ? 'correct' : 'incorrect') : ''}`}
+              >
+                {index + 1}
+              </div>
+            ))}
+          </div>
           <button onClick={restartQuiz} className="quiz-button">Quiz neu starten</button>
           <button onClick={() => navigate('/topic-selection')} className="quiz-button">Zurück zur Themenauswahl</button>
         </div>
@@ -87,11 +113,23 @@ const QuizScreen: React.FC = () => {
         <p>{currentQuestion.text}</p>
         <div className="options-container">
           {currentQuestion.options.map((option, index) => (
-            <label key={index} className="option-label">
+            <label
+              key={index}
+              className={`option-label ${
+                isAnswerConfirmed
+                  ? currentQuestion.correctAnswers.includes(index)
+                    ? 'correct'
+                    : selectedOptions[currentQuestionIndex].includes(index)
+                    ? 'incorrect'
+                    : ''
+                  : ''
+              }`}
+            >
               <input
                 type="checkbox"
                 checked={selectedOptions[currentQuestionIndex].includes(index)}
                 onChange={() => handleOptionToggle(index)}
+                disabled={isAnswerConfirmed}
               />
               {option}
             </label>
@@ -101,10 +139,19 @@ const QuizScreen: React.FC = () => {
           <button onClick={handleBack} className="quiz-button" disabled={currentQuestionIndex === 0}>
             Zurück
           </button>
-          <button onClick={handleNext} className="quiz-button">
-            {currentQuestionIndex === questions.length - 1 ? 'Quiz beenden' : 'Nächste Frage'}
-          </button>
+          {!isAnswerConfirmed ? (
+            <button onClick={handleConfirmAnswer} className="quiz-button">
+              Antwort bestätigen
+            </button>
+          ) : (
+            <button onClick={handleNext} className="quiz-button">
+              {currentQuestionIndex === questions.length - 1 ? 'Quiz beenden' : 'Nächste Frage'}
+            </button>
+          )}
         </div>
+        <button onClick={abortQuiz} className="quiz-button abort-button">
+          Quiz abbrechen
+        </button>
       </div>
     </div>
   );
