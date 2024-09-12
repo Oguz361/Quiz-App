@@ -426,21 +426,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [0],
   },
   {
-    id: 40,
-    text: "Was bedeutet der HTTP-Response Status-Code 404?",
-    options: [
-      "Der Client ist nicht berechtigt, die Aktion auszuführen (Unauthorized).",
-      "OK, Anfrage wurde erfolgreich bearbeitet.",
-      "Die angefragte Resource gibt es nicht.",
-      "Interner Serverfehler (Internal Server Error).",
-      "Die Anfrage wurde erfolgreich bearbeitet, die Antwort enthält aber keinen Inhalt (Content).",
-      "Die Anfrage ist fehlerhaft (Bad Request).",
-      "Anfrage wird nicht unterstützt (Not Implemented).",
-      "Die Resource wurde erfolgreich angelegt.",
-    ],
-    correctAnswers: [2],
-  },
-  {
     id: 41,
     text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
     options: [
@@ -450,17 +435,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Sie muss kollisionsresistent sein.",
     ],
     correctAnswers: [3],
-  },
-  {
-    id: 42,
-    text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
-    options: [
-      "Sie darf nicht viel Speicher verbrauchen.",
-      "Sie muss kollisionsresistent sein.",
-      "Sie muss besonders schnell sein.",
-      "Sie muss kollisionsfrei sein.",
-    ],
-    correctAnswers: [1],
   },
   {
     id: 43,
@@ -479,23 +453,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 44,
-    text: "Welche Aspekte können Sie sinnvollerweise in einer Security-Pipeline mit Middlewares im Express-Backend adressieren?",
-    options: [
-      "Cookie-Verwaltung",
-      "Authentifizierung",
-      "Logging",
-      "Code-Reviews",
-      "Rate-Limiting",
-      "Verschlüsselung",
-      "Penetrationstests",
-      "Autorisierung",
-      "Datenbankabfragen",
-      "Hashing",
-    ],
-    correctAnswers: [1, 2, 4, 7],
-  },
-  {
     id: 45,
     text: "Ist ein JWT genauso sicherheitskritisch wie ein Passwort und warum?",
     options: [
@@ -506,17 +463,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     ],
     correctAnswers: [3],
   },
-  {
-    id: 46,
-    text: "Ordnen Sie die folgenden Verfahren zum Speichern des JWT beim Client nach ihrer Sicherheit.",
-    options: [
-      "In einem HTTP-only Cookie",
-      "In einem normalen Cookie",
-      "In einer lokalen Variable",
-    ],
-    correctAnswers: [0, 1, 2],
-  },
-
   {
     id: 47,
     text: "Welchen HTTP-Statuscode würden Sie beim Aufruf eines Backends erwarten, wenn ein interner Serverfehler auftritt?",
@@ -530,31 +476,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [3],
   },
   {
-    id: 49,
-    text: "Wofür steht das 'A' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
-    options: ["Authentication", "Access", "Availability", "Authorization"],
-    correctAnswers: [2],
-  },
-  {
-    id: 50,
-    text: 'Gegeben sei folgender Code:\nfunction Bar() {\n  return React.createElement("p", { id: "par1" }, "Hello")\n}\nÜbersetzen Sie diesen Code nach JSX.',
-    options: [
-      'function Bar() {\n  return (\n    <p id="par1"> Hello </p>\n  )\n}',
-    ],
-    correctAnswers: [0],
-  },
-  {
-    id: 51,
-    text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
-    options: [
-      "Sie muss kollisionsresistent sein.",
-      "Sie muss besonders schnell sein.",
-      "Sie darf nicht viel Speicher verbrauchen.",
-      "Sie muss kollisionsfrei sein.",
-    ],
-    correctAnswers: [0],
-  },
-  {
     id: 52,
     text: "Wie können Sie am einfachsten Informationen von einer Funktionskomponente zu ihren Kindern (die ebenfalls Funktionskomponente sind) übermitteln?",
     options: [
@@ -564,12 +485,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Über States der Kinder-Funktionskomponente.",
     ],
     correctAnswers: [2],
-  },
-  {
-    id: 53,
-    text: "Welches Framework in JavaScript kann man zur Umsetzung des Entitätslayers der Backend-komponente einsetzen?",
-    options: ["React", "Mongoose", "Spring", "Express"],
-    correctAnswers: [1],
   },
   {
     id: 54,
@@ -597,29 +512,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Sie entschlüsselt ein Base64-codierte Binärdatei und erzeugt daraus ein JSON-Objekt.",
     ],
     correctAnswers: [1],
-  },
-  {
-    id: 57,
-    text: "In der HTTP-Response können Informationen an unterschiedlicher Stelle enthalten sein. Wo können Sie diese in der Response finden?",
-    options: [
-      "Im Status-Code",
-      "Im Header",
-      "In den Argumenten",
-      "In der URI",
-      "Im Body",
-    ],
-    correctAnswers: [0, 1, 4],
-  },
-  {
-    id: 58,
-    text: 'Gegeben sei folgender Code:\nconst router = express.Router();\nrouter.get("/a", myFunc)\napp.use("/b", router);\nWelche URL (mit Host "host", Protokoll "http" und ohne weitere Portangabe) ruft myFunc auf?',
-    options: [
-      "http://host/a/b",
-      "http://host/b",
-      "http://host/b/a",
-      "http://host/a",
-    ],
-    correctAnswers: [2],
   },
   {
     id: 59,

@@ -73,7 +73,7 @@ const QuizScreen: React.FC = () => {
   };
 
   const abortQuiz = () => {
-    navigate('/topic-selection');
+    navigate('/topics');
   };
 
   if (questions.length === 0) {
