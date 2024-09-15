@@ -157,17 +157,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [3],
   },
   {
-    id: 15,
-    text: "In einer relationalen Datenbank spricht man von Tabellen (Tables). Was ist das Pendant in MongoDB?",
-    options: [
-      "Objekte (Objects)",
-      "Sammlungen (Collections)",
-      "Dokumente (Documents)",
-      "Felder (Fields)",
-    ],
-    correctAnswers: [1],
-  },
-  {
     id: 16,
     text: "Wofür steht das 'C' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
     options: ["Confidentiality", "Control", "Configuration", "Compliance"],
@@ -476,17 +465,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [3],
   },
   {
-    id: 44,
-    text: "Wie können Sie am einfachsten Informationen von einer Funktionskomponente zu ihren Kindern (die ebenfalls Funktionskomponente sind) übermitteln?",
-    options: [
-      "Über den useContext-Hook",
-      "Über den useEffect-Hook",
-      "Über Props der Kinder-Funktionskomponente.",
-      "Über States der Kinder-Funktionskomponente.",
-    ],
-    correctAnswers: [2],
-  },
-  {
     id: 45,
     text: "Mit welcher Prop registrieren Sie eine Validierungsfunktion einer Controlled-Component, wenn Sie bei jedem Tastendruck eine Validierung durchführen wollen?",
     options: ["onInput", "onSubmit", "onChange", "onBlur"],
@@ -550,29 +528,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 51,
-    text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
-    options: [
-      "Sie muss besonders schnell sein.",
-      "Sie muss kollisionsfrei sein.",
-      "Sie darf nicht viel Speicher verbrauchen.",
-      "Sie muss kollisionsresistent sein.",
-    ],
-    correctAnswers: [3],
-  },
-  {
-    id: 52,
-    text: 'Sie sehen im Frontend-Code folgenden Import:\nimport "./App.css"\nWelche Aussage ist richtig?',
-    options: [
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich Webpack.",
-      "Ein CSS kann nicht in JavaScript mit import eingebunden werden, es wird ein Fehler geworfen.",
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich Babel.",
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich React.",
-      "In JavaScript können CSS-Dateien wie andere Module importiert werden.",
-    ],
-    correctAnswers: [0],
-  },
-  {
     id: 53,
     text: "Gegeben sei folgender Code:\nimport { Schema, model, Types } from 'mongoose'\nconst TeamSchema = new Schema({\nname: String,\ncaptain: { type: Schema.Types.ObjectId, ref: 'Player' }\n});\n\nexport const Team = model('Team', TeamSchema);\nWelche Aussagen sind korrekt?",
     options: [
@@ -614,12 +569,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Main könnte undefined sein.",
     ],
     correctAnswers: [0],
-  },
-  {
-    id: 58,
-    text: "Welchen Hook verwenden Sie in React, wenn Sie innerhalb einer Komponente veränderliche Daten speichern wollen?",
-    options: ["useContext", "useParam", "useEffect", "useState"],
-    correctAnswers: [3],
   },
   {
     id: 59,
@@ -701,17 +650,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 67,
-    text: "In einer relationalen Datenbank spricht man von Tabellen (Table). Was ist das Pendant (die Entsprechung) in MongoDB?",
-    options: [
-      "Sammlungen (Collections)",
-      "Dokumente (Documents)",
-      "Zeilen (Rows)",
-      "Spalten (Columns)",
-    ],
-    correctAnswers: [0],
-  },
-  {
     id: 68,
     text: "In der HTTP-Response können Informationen an unterschiedlicher Stelle enthalten sein. Wo können Sie diese in der Response finden?",
     options: ["Im Body", "Im Header", "Im Status-Code"],
@@ -791,18 +729,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [1],
   },
   {
-    id: 76,
-    text: "Welchen HTTP-Statuscode würden Sie beim Aufruf eines Backends erwarten, wenn ein interner Serverfehler auftritt?",
-    options: ["500"],
-    correctAnswers: [0],
-  },
-  {
-    id: 77,
-    text: "Welchen Hook verwenden Sie in React, wenn Sie innerhalb einer Komponente veränderliche Daten speichern wollen?",
-    options: ["useContext", "useParam", "useEffect", "useState"],
-    correctAnswers: [3],
-  },
-  {
     id: 78,
     text: "Wofür steht das 'A' in der Abkürzung CIA im Zusammenhang mit der Sicherheit von Webanwendungen?",
     options: ["Authentication", "Access", "Availability", "Authorization"],
@@ -812,17 +738,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     id: 79,
     text: "Gegeben sei folgender Code:\nfunction Bar() {\nreturn React.createElement('p', { id: 'par1' }, 'Hello')\n}\nÜbersetzen Sie diesen Code nach JSX.",
     options: ["function Bar() {\nreturn (\n<p id={'par1'}> Hello </p>\n)\n}"],
-    correctAnswers: [0],
-  },
-  {
-    id: 80,
-    text: "Welche Eigenschaft ist für eine Hashing-Funktion für kryptographische Anwendungen beim Signieren von Public-Keys im Allgemeinen relevant?",
-    options: [
-      "Sie muss kollisionsresistent sein.",
-      "Sie muss besonders schnell sein.",
-      "Sie darf nicht viel Speicher verbrauchen.",
-      "Sie muss kollisionsfrei sein.",
-    ],
     correctAnswers: [0],
   },
   {
@@ -869,17 +784,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [2],
   },
   {
-    id: 85,
-    text: "Wie können Sie am einfachsten Informationen von einer Funktionskomponente zu ihren Kindern (die ebenfalls Funktionskomponente sind) übermitteln?",
-    options: [
-      "Über den useContext-Hook",
-      "Über den useEffect-Hook",
-      "Über Props der Kinder-Funktionskomponente.",
-      "Über States der Kinder-Funktionskomponente.",
-    ],
-    correctAnswers: [2],
-  },
-  {
     id: 86,
     text: "Welche Constraints (Beschränkungen) werden von REST gemacht?",
     options: [
@@ -895,18 +799,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Die Kommunikation zwischen den Komponenten muss synchron sein.",
     ],
     correctAnswers: [1, 4, 5, 6, 7, 8],
-  },
-  {
-    id: 87,
-    text: "Sie sehen im Frontend-Code folgenden Import:\nimport './App.css'\nWelche Aussage ist richtig?",
-    options: [
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich Webpack.",
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich Babel.",
-      "In JavaScript können CSS-Dateien wie andere Module importiert werden.",
-      "Ein CSS kann nicht in JavaScript mit import eingebunden werden, es wird ein Fehler geworfen.",
-      "Das CSS wird in der App-Komponente verwendet und das Projekt verwendet vermutlich React.",
-    ],
-    correctAnswers: [0],
   },
   {
     id: 88,
@@ -1010,22 +902,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     correctAnswers: [0, 2, 3],
   },
   {
-    id: 97,
-    text: "In einer relationalen Datenbank spricht man von Spalten (Columns). Was ist das Pendant (die Entsprechung) in MongoDB?",
-    options: [
-      "Objekte (Objects)",
-      "Zeilen (Rows)",
-      "Tabellen (Tables)",
-      "Pfade (Paths)",
-      "Graphen (Graphs)",
-      "Dokumente (Documents)",
-      "Felder (Fields)",
-      "Sammlungen (Collections)",
-      "Spalten (Columns)",
-    ],
-    correctAnswers: [6],
-  },
-  {
     id: 98,
     text: "Was macht die Methode verify der JavaScript-Bibliothek jsonwebtoken?",
     options: [
@@ -1073,18 +949,6 @@ export const webQuizQuestions: QuizQuestion[] = [
     ],
     correctAnswers: [5],
   },
-
-  {
-    id: 102,
-    text: 'Sie sehen in einer ts-Datei den folgenden Code:\nimport "./style.css";\nWas bewirkt dieser Code?',
-    options: [
-      "Die Datei wird nicht wirklich importiert, sondern nur von Webpack verarbeitet.",
-      "Die Datei wird importiert, d.h. der TypeScript-Compiler prüft, ob die CSS-Datei korrekt ist.",
-      "Die Datei wird importiert, so dass wir in TypeScript direkt auf die darin befindelichen RuleSets zugreifen können.",
-    ],
-    correctAnswers: [0],
-  },
-
   {
     id: 103,
     text: "Welche Möglichkeiten gibt es, um einen Endpoint in Express zu definieren?",
@@ -1094,22 +958,6 @@ export const webQuizQuestions: QuizQuestion[] = [
       "Man meldet eine benannte Funktion an bei einem Router an.",
     ],
     correctAnswers: [1, 2],
-  },
-  {
-    id: 104,
-    text: "In einer relationalen Datenbank spricht man von Tabellen (Tables). Was ist das Pendant (die Entsprechung) in MongoDB?",
-    options: [
-      "Graphen (Graphs)",
-      "Spalten (Columns)",
-      "Felder (Fields)",
-      "Objekte (Objects)",
-      "Tabellen (Tables)",
-      "Pfade (Paths)",
-      "Zeilen (Rows)",
-      "Sammlungen (Collections)",
-      "Dokumente (Documents)",
-    ],
-    correctAnswers: [7],
   },
   {
     id: 115,
