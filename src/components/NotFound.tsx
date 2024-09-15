@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div className="main_wrapper">
       <div className="main">
-        <div className="antenna">
+        <div className="antenna">s
           <div className="antenna_shadow"></div>
           <div className="a1"></div>
           <div className="a1d"></div>
